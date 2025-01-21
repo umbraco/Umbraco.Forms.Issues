@@ -1,7 +1,6 @@
 ---
-name: 🐛 Bug Report
-description: "File a bug report, if you've discovered a problem in Umbraco Forms."
-labels: "type/bug"
+name: 🐛 Issue Report
+description: "File a issue report, if you've discovered a problem in Umbraco Forms."
 body:
 - type: input
   id: "version"
