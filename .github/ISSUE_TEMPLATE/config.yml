@@ -1,1 +1,4 @@
 blank_issues_enabled: false
+    - name: 🔐 Security Issue
+      url: https://umbraco.com/about-us/trust-center/security-and-umbraco/how-to-report-a-vulnerability-in-umbraco/
+      about: Discovered a Security Issue in Umbraco Forms?
