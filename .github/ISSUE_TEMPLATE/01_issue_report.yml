@@ -5,8 +5,15 @@ body:
 - type: input
   id: "version"
   attributes:
-    label: "Which Umbraco Forms version are you using? (Please write the *exact* version, example: 10.1.0)"
+    label: "Which Umbraco Forms version are you using? (Please write the *exact* version, example: 13.4.0)"
     description: "Go to the Forms section and the version used will be at the top of the page"
+  validations:
+    required: true
+- type: input
+  id: "umbracoversion"
+  attributes:
+    label: "Which Umbraco version are you using? (Please write the *exact* version, example: 13.5.2)"
+    description: "Use the help icon in the Umbraco backoffice to find the version you're using"
   validations:
     required: true
 - type: textarea
