@@ -19,7 +19,7 @@ body:
 - type: textarea
   id: "summary"
   attributes:
-    label: "Bug summary"
+    label: "Issue summary"
     description: "Write a short summary of the bug."
     placeholder: >
       Try to pinpoint it as much as possible.
