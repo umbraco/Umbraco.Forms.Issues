@@ -1,0 +1,16 @@
+---
+labels: ["idea"]
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Describe your idea"
+      placeholder: "What should this feature do? Why is it useful? Who would benefit?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Context"
+      description: "Explain the problem you're trying to solve, or how this idea fits in."
