@@ -1,6 +1,7 @@
 ---
 name: 🐛 Issue Report
 description: "File a issue report, if you've discovered a problem in Umbraco Forms."
+labels: ["type/bug"]
 body:
 - type: input
   id: "version"
