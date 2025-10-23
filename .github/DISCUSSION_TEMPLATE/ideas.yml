@@ -1,5 +1,5 @@
 ---
-labels: ["idea"]
+labels: ["type/feature"]
 body:
   - type: textarea
     id: proposal
