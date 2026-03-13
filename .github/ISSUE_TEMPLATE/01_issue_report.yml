@@ -34,7 +34,7 @@ body:
     id: "specifics"
     description: "Remember that you can format code and logs nicely with the `<>` button"
     placeholder: >
-      Mention the exact error messgae, if applicable
+      Mention the exact error message, if applicable
       
       Mention the URL where this bug occurs, if applicable
       
