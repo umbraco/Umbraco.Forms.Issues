@@ -1,0 +1,32 @@
+# LOCKED template — the per-repo caller for the loop-dispatch reusable workflow.
+# Commit verbatim to each target repo as `.github/workflows/loop-dispatch.yml`.
+#
+# THIS IS THE ISSUES REPO of a cross-repo consumer. The Umbraco Forms source lives in
+# umbraco/Forms, so this copy subscribes to `issues` ONLY — issue-label events fire here,
+# and the routine does its work in the code repo. That redirect comes from
+# `topology.code` in this repo's `.claude/ops-repo-meta.json`, which the router reads and
+# turns into `target=umbraco/Forms`.
+#
+# `with.target_repo` would do the same thing by hand and is DEPRECATED: one fact in two
+# files in two repos, with nothing to catch them disagreeing. Do not add it.
+#
+# The `pull_request_target` trigger belongs on the code repo's copy, where the PRs are.
+#
+# Requires two secrets on the repo (or the org):
+#   LOOP_DISPATCH_FIRE_URL  — the routine's Fire URL (Routines UI → Call via API)
+#   LOOP_DISPATCH_TOKEN     — the token generated for that routine
+name: loop-dispatch
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  dispatch:
+    uses: umbraco/umbraco-ai-ops/.github/workflows/loop-dispatch.yml@main
+    # Pass secrets explicitly rather than `secrets: inherit` — inherit only forwards when
+    # the caller and the reusable workflow share an org, so being explicit keeps this
+    # working even for a consumer in a different org and makes the secret flow visible.
+    secrets:
+      LOOP_DISPATCH_FIRE_URL: ${{ secrets.LOOP_DISPATCH_FIRE_URL }}
+      LOOP_DISPATCH_TOKEN: ${{ secrets.LOOP_DISPATCH_TOKEN }}
